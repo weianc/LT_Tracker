@@ -5,11 +5,11 @@ class Solution:
             if c == '(' or c == '[' or c == '{':
                 stk.append(c)
             else:
-                if len(stk) == 0: 
+                if not stk: 
                     return False
                 else:
                     cur = stk.pop()
                     if cur == '(' and c != ')' or cur == '[' and c != ']' or cur == '{' and c != '}':
                         return False
         
-        return len(stk) == 0
+        return not stk
